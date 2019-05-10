@@ -1,4 +1,4 @@
-all: articulation_points mst_directed strongly_connected ford_bellman dijkstra kruskal min-cut min-cost_max-flow
+all: articulation_points mst_directed strongly_connected ford_bellman dijkstra kruskal min-cut min-cost_max-flow max-flow matching
 
 create_dir:
 	mkdir -p built
@@ -29,3 +29,9 @@ min-cut: create_dir
 
 min-cost_max-flow: create_dir
 	g++ -std=c++17 -w -O3 min-cost_max-flow.cpp -o built/min-cost_max-flow
+
+max-flow: create_dir
+	g++ -std=c++17 -w -O3 max-flow.cpp -o built/max-flow
+
+matching: create_dir
+	g++ -std=c++17 -w -O3 matching.cpp -o built/matching
