@@ -25,7 +25,8 @@ export class MatchingsComponent implements OnInit {
   sendData() {
     this.sendDataService.matchings(this.task.value.task).subscribe(res => {
       this.isLoad = true;
-      this.res = res;
+      this.res = res.answer;
+      this.task.reset();
     });
   }
 

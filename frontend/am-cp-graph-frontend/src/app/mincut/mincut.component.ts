@@ -24,7 +24,6 @@ export class MincutComponent implements OnInit {
 
   sendData() {
     this.sendDataService.mincut(this.task.value.task).subscribe(res => {
-      console.log(res.answer);
       this.isLoad = true;
       this.res = res.answer;
       this.task.reset();

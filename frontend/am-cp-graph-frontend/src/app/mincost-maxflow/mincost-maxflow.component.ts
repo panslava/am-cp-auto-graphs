@@ -24,7 +24,6 @@ export class MincostMaxflowComponent implements OnInit {
 
   sendData() {
     this.sendDataService.mincost_maxflow(this.task.value.task).subscribe(res => {
-      console.log(res.answer);
       this.isLoad = true;
       this.res = res.answer;
       this.task.reset();
