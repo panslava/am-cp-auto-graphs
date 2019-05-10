@@ -1,0 +1,30 @@
+<h3>Задание</h3>
+<p>Дан ориентированный граф. Найти компоненты сильной связности.</p>
+
+<h3>Входные данные</h3>
+<p>Первая строка содержит два числа n и m. n - число вершин, m - число ребер.<br>
+  Следующие m строк содержат описание ребер, по одному в строке. Ребро i описывается двумя натуральными числами
+  <em>b<sub>i</sub></em>, <em>e<sub>i</sub></em> - началом и концом соответственно.
+</p>
+
+<p><img src="https://pp.userapi.com/c846218/v846218573/1f53e4/zYFLNja63tU.jpg" alt=""></p>
+
+<form [formGroup]="task">
+  <textarea formControlName="task"
+            id="input_text"
+            placeholder="Данные"
+            rows="10">
+  </textarea>
+
+  <button nbButton class="submit-button" status="info" size="xsmall" (click)="sendData()">
+    Отправить
+  </button>
+</form>
+
+<div *ngIf="isLoad">
+  <h3>Ответ</h3>
+  <p>1 строка - количество компонент сильной связности. <br>
+    2 строка - список номеров компонент для каждой вершины.
+  </p>
+  {{res}}
+</div>
