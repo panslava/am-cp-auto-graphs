@@ -9,7 +9,7 @@ import {SendDataService} from '../send-data.service';
 })
 export class MincostMaxflowComponent implements OnInit {
 
-  private task: FormGroup;
+  task: FormGroup;
   isLoad = false;
   res;
 

@@ -10,7 +10,7 @@ import {SendDataService} from '../send-data.service';
 export class StrongConnectedComponent implements OnInit {
 
 
-  private task: FormGroup;
+  task: FormGroup;
   isLoad = false;
   res;
 
