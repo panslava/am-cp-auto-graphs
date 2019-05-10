@@ -3,11 +3,11 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SendDataService} from '../send-data.service';
 
 @Component({
-  selector: 'app-matchings',
-  templateUrl: './matchings.component.html',
-  styleUrls: ['./matchings.component.css']
+  selector: 'app-ford-bellman',
+  templateUrl: './ford-bellman.component.html',
+  styleUrls: ['./ford-bellman.component.css']
 })
-export class MatchingsComponent implements OnInit {
+export class FordBellmanComponent implements OnInit {
 
   private task: FormGroup;
   isLoad = false;
@@ -23,10 +23,11 @@ export class MatchingsComponent implements OnInit {
   }
 
   sendData() {
-    this.sendDataService.matchings(this.task.value.task).subscribe(res => {
+    this.sendDataService.bellman(this.task.value.task).subscribe(res => {
+      console.log(res.answer);
       this.isLoad = true;
-      this.res = res;
+      this.res = res.answer;
+      this.task.reset();
     });
   }
-
 }
