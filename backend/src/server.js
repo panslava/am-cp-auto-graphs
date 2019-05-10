@@ -20,6 +20,10 @@ app.listen(config.port, () => {
   console.log(`Listening on port ${config.port}`)
 })
 
+const routes = require('./routes/note.js')
+
+app.use('/api/', routes)
+
 app.get('/', (req, res) => {
   res.send('Simple backend response').status(200)
 })
