@@ -216,6 +216,6 @@ int main(int argc, char **argv)
     std::cout << "YES" << std::endl
               << do_thing(0, n) << std::endl;
 
-    cout << endl;
+    std::cout << std::endl;
     return 0;
 }

@@ -121,6 +121,7 @@ int32_t main(int32_t argc, char **argv)
         {
             dsu_join(u.u, u.v);
             ans += u.w;
+            cout << u.u << ' ' << u.v << '\n';
         }
     }
 
