@@ -80,13 +80,23 @@ long long do_thing(int root, int n)
     for (int i = 0; i < n; i++)
     {
         int mn = 2e9 + 2;
+        int min_j = 0;
         for (auto &j : back_list[i])
-            mn = std::min(mn, j.second);
+        {
+            if (j.second < mn)
+            {
+                mn = j.second;
+                min_j = j.first;
+            }
+        }
 
         for (auto &j : back_list[i])
             j.second -= mn, conj_list[j.first][i] -= mn;
         if (i != root)
+        {
             res += mn;
+            std::cout << min_j + 1 << ' ' << i + 1 << ' ' << mn << '\n';
+        }
     }
 
     used.assign(n, false);
@@ -171,7 +181,6 @@ int main(int argc, char **argv)
     freopen(argv[1], "r", stdin);
     freopen(argv[2], "w", stdout);
 
-    long long res = 0;
     int n, m;
     std::cin >> n >> m;
 
@@ -186,9 +195,6 @@ int main(int argc, char **argv)
         int u, v, w;
         std::cin >> u >> v >> w;
         u--, v--;
-
-        //if (w < 0)
-        //    res += w, w = 0;
 
         if (v != 0)
         {
@@ -208,7 +214,8 @@ int main(int argc, char **argv)
     }
 
     std::cout << "YES" << std::endl
-              << res + do_thing(0, n) << std::endl;
+              << do_thing(0, n) << std::endl;
 
+    cout << endl;
     return 0;
 }

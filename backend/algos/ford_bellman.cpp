@@ -98,5 +98,7 @@ int main(int argc, char **argv)
             cout << d[i] << '\n';
         }
     }
+
+    cout << endl;
     return 0;
 }

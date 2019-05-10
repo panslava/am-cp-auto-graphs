@@ -158,6 +158,6 @@ int main(int argc, char **argv)
     {
         cout << ans[i] << " ";
     }
-
+    cout << endl;
     return 0;
 }

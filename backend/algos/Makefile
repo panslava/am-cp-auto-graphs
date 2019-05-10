@@ -1,4 +1,4 @@
-all: articulation_points mst_directed strongly_connected ford_bellman dijkstra kruskal
+all: articulation_points mst_directed strongly_connected ford_bellman dijkstra kruskal min-cut min-cost_max-flow
 
 create_dir:
 	mkdir -p built

@@ -38,7 +38,6 @@ using namespace std;
     cerr << '\n';                        \
     for (int i = 0; i < heh.size(); i++) \
     cerr << #heh << "[" << i << "] = " << heh[i] << '\n'
-#define endl '\n'
 #define all(a) a.begin(), a.end()
 #define int long long
 #define ll long long
@@ -133,5 +132,6 @@ int32_t main(int32_t argc, char **argv)
 #ifdef DEBUG
     cerr << "\nTime: " << (double)clock() / CLOCKS_PER_SEC << endl;
 #endif
+    cout << endl;
     return 0;
 }
