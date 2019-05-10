@@ -59,6 +59,8 @@ int main(int argc, char **argv)
     vector<vector<rib>> g(n);
     int s, t;
     cin >> s >> t;
+    s--;
+    t--;
     for (int i = 0; i < m; i++)
     {
         int a, b, u, c;
@@ -128,12 +130,13 @@ int main(int argc, char **argv)
         }
         flow += addflow;
     }
-
-    for (auto &u : g)
+    cout << flow << '\n';
+    for (int i = 0; i < n; i++)
     {
-        for (auto &v : u)
+        for (auto &u : g[i])
         {
-            cout << v.f << ' ';
+            if (u.f > 0)
+                cout << i + 1 << ' ' << u.b + 1 << ' ' << u.f << '\n';
         }
     }
     cout << endl;
