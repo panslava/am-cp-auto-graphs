@@ -39,21 +39,16 @@ exports.matchings = function(req, res) {
   )
 }
 
-exports.bellman = async function(req, res) {
+exports.bellman = function(req, res) {
   let note = req.body.data
   const fs = require('fs')
-  await fs.writeFile('./src/input.txt', note, function(err) {
-    if (err) {
-      return console.log(err)
-    }
-    console.log('The file was saved!')
-  })
+  fs.writeFileSync('./src/input.txt', note)
 
   let exec = require('child_process').exec
-  let child = await exec(
+  let child = exec(
     './algos/built/ford_bellman ./src/input.txt ./src/my_output.txt',
     async function(error, stdout, stderr) {
-      let answer = await fs.readFileSync('./src/my_output.txt', 'utf-8')
+      let answer = fs.readFileSync('./src/my_output.txt', 'utf-8')
       const obj = {
         answer: answer
       }
@@ -63,21 +58,16 @@ exports.bellman = async function(req, res) {
   )
 }
 
-exports.dijkstra = async function(req, res) {
+exports.dijkstra = function(req, res) {
   let note = req.body.data
   const fs = require('fs')
-  await fs.writeFile('./src/input.txt', note, function(err) {
-    if (err) {
-      return console.log(err)
-    }
-    console.log('The file was saved!')
-  })
+  fs.writeFileSync('./src/input.txt', note)
 
   let exec = require('child_process').exec
-  let child = await exec(
+  let child = exec(
     './algos/built/dijkstra ./src/input.txt ./src/my_output.txt',
     async function(error, stdout, stderr) {
-      let answer = await fs.readFileSync('./src/my_output.txt', 'utf-8')
+      let answer = fs.readFileSync('./src/my_output.txt', 'utf-8')
       const obj = {
         answer: answer
       }
@@ -87,21 +77,16 @@ exports.dijkstra = async function(req, res) {
   )
 }
 
-exports.kruskal = async function(req, res) {
+exports.kruskal = function(req, res) {
   let note = req.body.data
   const fs = require('fs')
-  await fs.writeFile('./src/input.txt', note, function(err) {
-    if (err) {
-      return console.log(err)
-    }
-    console.log('The file was saved!')
-  })
+  fs.writeFileSync('./src/input.txt', note)
 
   let exec = require('child_process').exec
-  let child = await exec(
+  let child = exec(
     './algos/built/kruskal ./src/input.txt ./src/my_output.txt',
     async function(error, stdout, stderr) {
-      let answer = await fs.readFileSync('./src/my_output.txt', 'utf-8')
+      let answer = fs.readFileSync('./src/my_output.txt', 'utf-8')
       const obj = {
         answer: answer
       }
@@ -111,21 +96,16 @@ exports.kruskal = async function(req, res) {
   )
 }
 
-exports.china = async function(req, res) {
+exports.china = function(req, res) {
   let note = req.body.data
   const fs = require('fs')
-  await fs.writeFile('./src/input.txt', note, function(err) {
-    if (err) {
-      return console.log(err)
-    }
-    console.log('The file was saved!')
-  })
+  fs.writeFileSync('./src/input.txt', note)
 
   let exec = require('child_process').exec
-  let child = await exec(
+  let child = exec(
     './algos/built/mst_directed ./src/input.txt ./src/my_output.txt',
     async function(error, stdout, stderr) {
-      let answer = await fs.readFileSync('./src/my_output.txt', 'utf-8')
+      let answer = fs.readFileSync('./src/my_output.txt', 'utf-8')
       const obj = {
         answer: answer
       }
@@ -135,21 +115,16 @@ exports.china = async function(req, res) {
   )
 }
 
-exports.mincut = async function(req, res) {
+exports.mincut = function(req, res) {
   let note = req.body.data
   const fs = require('fs')
-  await fs.writeFile('./src/input.txt', note, function(err) {
-    if (err) {
-      return console.log(err)
-    }
-    console.log('The file was saved!')
-  })
+  fs.writeFileSync('./src/input.txt', note)
 
   let exec = require('child_process').exec
-  let child = await exec(
+  let child = exec(
     './algos/built/min-cut ./src/input.txt ./src/my_output.txt',
     async function(error, stdout, stderr) {
-      let answer = await fs.readFileSync('./src/my_output.txt', 'utf-8')
+      let answer = fs.readFileSync('./src/my_output.txt', 'utf-8')
       const obj = {
         answer: answer
       }
@@ -159,21 +134,16 @@ exports.mincut = async function(req, res) {
   )
 }
 
-exports.maxflow = async function(req, res) {
+exports.maxflow = function(req, res) {
   let note = req.body.data
   const fs = require('fs')
-  await fs.writeFile('./src/input.txt', note, function(err) {
-    if (err) {
-      return console.log(err)
-    }
-    console.log('The file was saved!')
-  })
+  fs.writeFileSync('./src/input.txt', note)
 
   let exec = require('child_process').exec
-  let child = await exec(
+  let child = exec(
     './algos/built/max-flow ./src/input.txt ./src/my_output.txt',
     async function(error, stdout, stderr) {
-      let answer = await fs.readFileSync('./src/my_output.txt', 'utf-8')
+      let answer = fs.readFileSync('./src/my_output.txt', 'utf-8')
       const obj = {
         answer: answer
       }
@@ -183,21 +153,16 @@ exports.maxflow = async function(req, res) {
   )
 }
 
-exports.mincost_maxflow = async function(req, res) {
+exports.mincost_maxflow = function(req, res) {
   let note = req.body.data
   const fs = require('fs')
-  await fs.writeFile('./src/input.txt', note, function(err) {
-    if (err) {
-      return console.log(err)
-    }
-    console.log('The file was saved!')
-  })
+  fs.writeFileSync('./src/input.txt', note)
 
   let exec = require('child_process').exec
-  let child = await exec(
+  let child = exec(
     './algos/built/min-cost_max-flow ./src/input.txt ./src/my_output.txt',
     async function(error, stdout, stderr) {
-      let answer = await fs.readFileSync('./src/my_output.txt', 'utf-8')
+      let answer = fs.readFileSync('./src/my_output.txt', 'utf-8')
       const obj = {
         answer: answer
       }
