@@ -26,7 +26,6 @@ export class KruskalComponent implements OnInit {
     this.sendDataService.kruskal(this.task.value.task).subscribe(res => {
       this.isLoad = true;
       this.res = res.answer;
-      this.task.reset();
     });
   }
 }
